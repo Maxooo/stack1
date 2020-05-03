@@ -1,0 +1,15 @@
+version: "3.2"
+
+services: 
+  app:
+    build: .
+    container_name: stack1
+    volumes:
+      - .:/usr/src/app
+      - /var/run/docker.sock:/var/run/docker.sock
+    env_file:
+      - .env
+    labels: 
+      stack1.name: 'Stack1'
+    ports: 
+      - 3000:3000

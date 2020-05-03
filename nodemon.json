@@ -1,0 +1,6 @@
+{
+    "main": "bin/www",
+    "verbose": true,
+    "ext": "js,twig"
+  }
+  

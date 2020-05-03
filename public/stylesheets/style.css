@@ -1,0 +1,32 @@
+body {
+  padding: 50px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  font-size: 09.em;
+}
+
+a {
+  color: #00B7FF;
+}
+
+.state {
+  border-radius: 50%;
+  width: 13px;
+  height: 13px;
+  border: 1px solid #5454540f;
+}
+
+.state.running {
+  background-color: #a2e837;
+}
+
+.state.exited {
+  background-color: red;
+}
+
+.state.restarting {
+  background-color: #f9933d;
+}
+
+.state.stoped {
+  background-color: #d2d2d2;
+}

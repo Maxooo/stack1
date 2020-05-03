@@ -1,0 +1,16 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="uk-container uk-container-small">
+    <div class="uk-position-center uk-align-center">
+        <img src="./images/logo.png" width="300" alt="Logo Stack1" class="uk-align-center">
+        <hr />
+        <div class="uk-width-1-1">
+            <h1 class="uk-text-center">{{ message }} <small class="uk-text-primary">{{ error.status }}</small></h1>
+            {% if error.stack != null %}
+            <pre>{{ error.stack }}</pre>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

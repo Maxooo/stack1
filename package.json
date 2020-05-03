@@ -1,0 +1,27 @@
+{
+  "name": "stack1",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "compile": "lessc public/stylesheets/less/theme.less public/stylesheets/theme.css",
+    "build": "yarn run compile",
+    "dev": "DEBUG=stack1:* nodemon ./bin/www",
+    "start": "pm2-runtime ecosystem.config.js"
+  },
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "dotenv": "^8.2.0",
+    "express": "~4.16.1",
+    "hbs": "~4.0.4",
+    "http-errors": "~1.6.3",
+    "less": "^3.11.1",
+    "morgan": "~1.9.1",
+    "twig": "^1.15.1",
+    "uikit": "^3.4.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.3"
+  }
+}

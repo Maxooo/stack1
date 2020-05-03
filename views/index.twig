@@ -1,0 +1,36 @@
+{% extends "layout.twig" %}
+
+{% block body %}
+<div class="uk-container">
+    <div class="uk-position-center uk-align-center uk-height-large">
+        <img src="./images/logo.png" width="300" alt="Logo Stack1" class="uk-align-center">
+        <div class="uk-height-medium uk-panel uk-overflow-auto">
+            <table class="uk-table uk-table-small uk-table-divider">
+                {% for service in services %}
+                {% set name = service.Labels[label] %}
+                {% if name != null %}
+                <tr>
+                    <td class="uk-table-shrink uk-table-middle">
+                        <div class="state {{ service.State }}" uk-tooltip="{{ service.State|capitalize }}"></div>
+                    </td>
+                    <td>
+                        <div uk-tooltip="{{ service.Status|capitalize }}">
+                            <span uk-icon="icon: server; ratio: 0.8" class="uk-margin-right-small"></span> 
+                            {% set url = service.Labels['traefik.frontend.rule']|replace({'Host:': 'https://'}) %}
+                            {% if url %}
+                            <a href="{{ url }}" target="_blank" title="{{ name }}">
+                            {% endif %}
+                                {{ name }}
+                            {% if url %}
+                            </a>
+                            {% endif %}
+                        </div>
+                    </td>
+                </tr>
+                {% endif %}
+                {% endfor %}
+            </table>
+        </div>
+    </div>
+</div>
+{% endblock %}
